@@ -1,0 +1,70 @@
+﻿body {
+    background-image: url("https://cdn.vox-cdn.com/thumbor/msZchpvmqFU7RQ0_M_8bqEvahIk=/0x0:5760x3840/1200x675/filters:focal(2420x1930:3340x2850)/cdn.vox-cdn.com/uploads/chorus_image/image/56578693/akrales_170907_1974_0026_02.1504880732.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.todobox {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: darkmagenta;
+    font-family: 'Indie Flower', cursive;
+    min-height: 700px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+
+table, th, td, form {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+th {
+    text-align: center;
+}
+
+table, .form, input {
+    background-color: gainsboro;
+    color: darkmagenta;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+    margin: auto;
+}
+
+.form {
+    margin-left: 20%;
+    margin-right: 20%;
+}  
+
+input {
+    background-color: ghostwhite
+}
+
+button, .button {
+    background-color: ghostwhite;
+    border-radius: 5px;
+    color: darkmagenta;
+    font-family: 'Indie Flower', cursive;
+    font-size: 30px;
+}        
+
+button a {
+    text-decoration: none;
+}
+
+.additem {
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+.icon-style {
+    text-align: center;
+}
+

@@ -1,0 +1,66 @@
+﻿@model List<ToDoApp.Models.Todo>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ToDoApp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <link href=@Url.Content("~/StyleSheet.css") rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+    <div class="todobox">
+    <h1>TODOS FOR TODAY:</h1>
+    <button class="additem" type="submit">@Html.ActionLink("Add new todo", "Add", "Todo")</button>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>ACTION</th>
+            <th>DONE</th>
+            <th>URGENT</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td style="min-width: 60px;">@item.Title</td>
+                <td class="icon-style">
+                    @if (@item.IsDone == true)
+                    {
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    }
+                </td>
+                <td class="icon-style">
+                    @if (@item.IsUrgent == true)
+                    {
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    }
+                    else
+                    {
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    }
+                </td>
+                <td>
+                    <form style="border:none" action="/todo/@item.Id/edit" method="get">
+                        <input  type="hidden" name="Id" value="@item.Id"/>
+                        <button type="submit">Edit</button>
+                    </form>
+                </td>
+                <td>
+                    <form style="border:none" action="/{id}/delete" method="post">
+                        <input  type="hidden" name="Id" value="@item.Id"/>
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+    </div>
+</body>
+</html>

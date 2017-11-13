@@ -1,0 +1,27 @@
+﻿@model ToDoApp.Models.Todo
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ToDoApp</title>
+    <link href=@Url.Content("~/StyleSheet.css") rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+</head>
+<body>
+    <div class="todobox">
+        <h1>Edit Todo</h1>
+        <div class="form">
+        @using (Html.BeginForm("Update", "Todo"))
+        {
+            <input type="hidden" name="Id" value="@Model.Id" />
+            <p>Todo Description @Html.TextBoxFor(model => model.Title) </p>
+            <p>Urgent @Html.CheckBoxFor(model => model.IsUrgent) </p>
+            <p>Done @Html.CheckBoxFor(model => model.IsDone) </p>
+            <div style = "text-align:right">
+            <button type="submit">Edit</button>
+            <button>@Html.ActionLink("Cancel", "List", "Todo")</button>
+            </div>
+        }
+        </div>
+    </div>
+</body>
+</html>
