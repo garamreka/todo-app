@@ -14,7 +14,7 @@ namespace ToDoApp.Migrations
                 columns: table => new
                 {
                     Id = table.Column<long>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
                     IsDone = table.Column<bool>(nullable: false),
                     IsUrgent = table.Column<bool>(nullable: false),
                     Title = table.Column<string>(nullable: true)
